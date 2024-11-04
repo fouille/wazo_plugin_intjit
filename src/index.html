@@ -1,0 +1,97 @@
+<html itemscope itemtype="http://schema.org/Product" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            width: 1350px;
+        }
+
+        /* Create two unequal columns that floats next to each other */
+        .column {
+            float: left;
+            padding: 10px;
+            height: 480px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        .left {
+            width: 70%;
+        }
+
+        .right {
+            width: 30%;
+            vertical-align: middle;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .btn-group button {
+            background-color: #808080;
+            border: 1px solid 808080;
+            color: white;
+            padding: 10px 24px;
+            cursor: pointer;
+            width: 50%;
+            display: block;
+        }
+
+        .btn-group button:not(:last-child) {
+            border-bottom: none;
+        }
+
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .btn-group button:hover {
+            background-color: #414040;
+        }
+    </style>
+    <script src="https://meet.jit.si/external_api.js"></script>
+
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="column left">
+            <div id=meet></div>
+        </div>
+    </div>
+</body>
+<script>
+const domain = 'meet.jit.si';
+const options = {
+    roomName: 'fsdfdsfsdfsdfdsf',
+    width: 1200,
+    height: 900,
+    parentNode: document.querySelector('#meet'),
+    devices: {
+        audioInput: '<deviceLabel>',
+        audioOutput: '<deviceLabel>',
+        videoInput: '<deviceLabel>'
+    },
+    configOverwrite: {
+                    prejoinPageEnabled: false //This here
+    },
+    lang: 'fr'
+};
+const api = new JitsiMeetExternalAPI(domain, options);
+</script>
+
+</html>

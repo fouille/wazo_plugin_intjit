@@ -1,0 +1,32 @@
+{
+    "manifestVersion": "0.1",
+    "version": "1.0.0",
+    "id": "wazo-plugin-intjit",
+    "packageName": "io.wazo.wda.wazo-plugin-intjit",
+    "productType": "app",
+    "name" : {
+      "short": "Int Jit",
+      "full": "Int Jit"
+    },
+    "developer": {
+      "name": "MULLER Franck"
+    },
+    "description": {
+      "short": "Affichage de l'application Int Jit",
+      "full": "Affichage de l'application Int Jit"
+    },
+    "icons": {
+      "color": "https://avatars.githubusercontent.com/u/68688703?s=200&v=4"
+    },
+    "staticTabs": [
+      {
+        "entityId": "IntJit-tab",
+        "context": [
+          "sidebarTab"
+        ], 
+        "name": "Int Jit",
+        "contentUrl": "./index.html",
+        "icon": "./img/icon.png"
+      }
+    ]
+  }
