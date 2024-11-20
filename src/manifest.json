@@ -1,6 +1,6 @@
 {
     "manifestVersion": "0.1",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "id": "wazo-plugin-intjit",
     "packageName": "io.wazo.wda.wazo-plugin-intjit",
     "productType": "app",
@@ -25,8 +25,8 @@
           "sidebarTab"
         ], 
         "name": "Int Jit",
-        "contentUrl": "./index.html",
-        "icon": "./img/icon.png"
+        "contentUrl": "https://sp-intjit.wazo.io",
+        "icon": "./img/webcam-svgrepo-com.svg"
       }
     ]
   }
