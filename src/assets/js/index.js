@@ -72,27 +72,19 @@ const afficherDonnees = () => {
         const url = storedEntries[i].conference;
         const extractedPart = url.split('/').pop();
         const dateFormatter = new DateFormatter(storedEntries[i].date);
-        const formattedDate = dateFormatter.formatFrench(); 
-        if (i >= 4 && i <=7) {
-            const divData = `<div class="resume-item pb-0">
+        const formattedDate = dateFormatter.formatFrench();
+        const divData = `<div class="resume-item pb-0">
               <h4>${extractedPart}</h4>
               <p class="t-small">${formattedDate}</p>
-              <p><i class="fa-solid fa-circle-nodes fa-lg text-success c-pointer" data-connect="${extractedPart}"></i> <i class="ml-5 fa-solid fa-copy fa-lg text-primary c-pointer" data-copy="${storedEntries[i].conference}"></i> <i class="ml-5 fa-solid fa-trash fa-lg text-danger c-pointer mr-5" data-remove="${storedEntries[i].conference}"></i></p>
+              <p><span class="badge bg-success c-pointer" data-connect="${extractedPart}"><i class="fa-solid fa-circle-nodes fa-lg"></i> Démarrer</span> <span class="badge bg-primary c-pointer" data-copy="${storedEntries[i].conference}"><i class="fa-solid fa-copy fa-lg"></i> Copier</span> <span class="badge bg-danger c-pointer" data-remove="${storedEntries[i].conference}"><i class="ml-5 fa-solid fa-trash fa-lg"></i> Supprimer</span></p>
               <ul>
                 <li>${storedEntries[i].conference}</li>
               </ul>
             </div>`;
+        if (i >= 4 && i <=7) {
             div2.innerHTML += divData;
         }
         if (i <= 3) {
-            const divData = `<div class="resume-item pb-0">
-              <h4>${extractedPart}</h4>
-              <p class="t-small">${formattedDate}</p>
-              <p><i class="fa-solid fa-circle-nodes fa-lg text-success c-pointer" data-connect="${extractedPart}"></i> <i class="ml-5 fa-solid fa-copy fa-lg text-primary c-pointer" data-copy="${storedEntries[i].conference}"></i> <i class="ml-5 fa-solid fa-trash fa-lg text-danger c-pointer mr-5" data-remove="${storedEntries[i].conference}"></i></p>
-              <ul>
-                <li>${storedEntries[i].conference}</li>
-              </ul>
-            </div>`;
             div.innerHTML += divData;
         }
         
@@ -102,9 +94,9 @@ const afficherDonnees = () => {
 // écouteur délégation d'événements click
 document.addEventListener('click', (e) => {
     // Vérifie si l'élément cliqué a la classe .fa-copy
-    const icon = e.target.closest('.fa-copy');
-    const connect = e.target.closest('.fa-circle-nodes');
-    const remove = e.target.closest('.fa-trash');
+    const icon = e.target.closest('.bg-primary');
+    const connect = e.target.closest('.bg-success');
+    const remove = e.target.closest('.bg-danger');
     const GoMeet = e.target.closest('.btn_submit');
     if (icon) {
         console.log('Icône cliquée !');
