@@ -88,7 +88,7 @@ const afficherDonnees = () => {
             const divData = `<div class="resume-item pb-0">
               <h4>${extractedPart}</h4>
               <p class="t-small">${formattedDate}</p>
-              <p><i class="fa-solid fa-circle-nodes fa-lg text-success c-pointer" data-connect="${extractedPart}"></i> <i class="ml-5 fa-solid fa-copy fa-lg text-primary c-pointer}" data-copy="${storedEntries[i].conference}"></i> <i class="ml-5 fa-solid fa-trash fa-lg text-danger c-pointer mr-5" data-remove="${storedEntries[i].conference}"></i></p>
+              <p><i class="fa-solid fa-circle-nodes fa-lg text-success c-pointer" data-connect="${extractedPart}"></i> <i class="ml-5 fa-solid fa-copy fa-lg text-primary c-pointer" data-copy="${storedEntries[i].conference}"></i> <i class="ml-5 fa-solid fa-trash fa-lg text-danger c-pointer mr-5" data-remove="${storedEntries[i].conference}"></i></p>
               <ul>
                 <li>${storedEntries[i].conference}</li>
               </ul>

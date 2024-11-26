@@ -1,6 +1,6 @@
 {
     "manifestVersion": "0.1",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "id": "wazo-plugin-intjit",
     "packageName": "io.wazo.wda.wazo-plugin-intjit",
     "productType": "app",

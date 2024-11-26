@@ -177,6 +177,14 @@ h6 {
   font-size: small;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
+.ml-20 {
+  margin-left: 20%;
+}
+
 .header {
   color: var(--default-color);
   position: fixed;
@@ -594,7 +602,7 @@ section,
 }
 
 .hero p {
-  margin: 5px 0 0 0;
+  margin: 5px 10px 0 0;
   font-size: 26px;
 }
 
