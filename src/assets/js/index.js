@@ -197,8 +197,9 @@ const runMeet = async (roomName, labelName) => {
     const userHOST = context.user.host;
     const userTOKEN = context.user.token;
     const userUUID = context.user.uuid;
+    const appType = context.app.extra.clientType;
     //appel API pour récupérer le domain de la stack Video
-    const CallForDomain = await fetch("https://" + userHOST + "/api/confd/1.1/users/" + userUUID + "/external/apps/wazo-euc-application-desktop?view=fallback", {
+    const CallForDomain = await fetch("https://" + userHOST + "/api/confd/1.1/users/" + userUUID + "/external/apps/wazo-euc-application-" + appType + "?view=fallback", {
         "headers": {
           "accept": "application/json",
           "content-type": "application/json",
