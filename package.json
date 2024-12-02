@@ -1,6 +1,6 @@
 {
   "name": "wazo_plugin_intjit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Jit Wazo WDA",
   "main": "index.js",
   "scripts": {

@@ -3,7 +3,7 @@ import '@fortawesome/fontawesome-free/js/solid';
 import { App } from '@wazo/euc-plugins-sdk';
 const app = new App();
 
-const domain = 'sp-intjit.wazo.io';
+let domain;
 const welcome = document.getElementById("p-welcome");
 const roomName = document.getElementById("MeetroomName");
 
@@ -194,6 +194,36 @@ const runMeet = async (roomName, labelName) => {
     firstname = context.user.profile.firstName;
     lastname = context.user.profile.lastName;
     email = context.user.profile.email;
+    const userHOST = context.user.host;
+    const userTOKEN = context.user.token;
+    //appel API pour récupérer le domain de la stack Video
+    const CallForDomain = await fetch("https://" + userHOST + "/api/confd/1.1/users/dab3c583-b3d8-47b4-aea4-44320214e583/external/apps/wazo-euc-application-desktop?view=fallback", {
+        "headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "x-auth-token": userTOKEN
+        },
+        "referrerPolicy": "strict-origin-when-cross-origin",
+        "body": null,
+        "method": "GET",
+        "mode": "cors",
+        "credentials": "omit"
+      }).then(response => {
+        if (!response.ok) {
+          throw new Error('Erreur réseau : ' + response.status);
+        }
+        return response.json();
+      })
+      .then(data => {
+        domain = data.configuration.wazomeeturl;
+      })
+      .catch(error => {
+        console.error('Erreur :', error);
+      });
+    
+    // console.log(domain);
+    //construction HTML de l'URL (juste pour visibilité)
+    document.getElementById('MeetroomName_label').innerHTML = "https://"+domain+"/"
     
     let p_html = 'Bienvenue <span class="typed" data-typed-items="Wazer, Meeter, Wazo Meeter, '+firstname + ' ' + lastname + '"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>';
     welcome.innerHTML += p_html;
